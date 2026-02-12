@@ -9,5 +9,8 @@ variable "access_key" {
 variable "secret_key" {
   default = "insert"         # aws secret key
 }
+variable "key_name" {
+  default = "nti"         # aws key pair
+}
 
 
