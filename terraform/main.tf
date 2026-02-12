@@ -16,7 +16,7 @@ provider "aws" {
 
 # create security group for the ec2 instance
 resource "aws_security_group" "ec2_security_group" {
-name        = "sg-monitoring"
+name        = var.sg-name
   description = "allow access on ports 22"
 
   # allow access on port 22
