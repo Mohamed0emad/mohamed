@@ -9,43 +9,33 @@ terraform {
 
 # Configure the AWS Provider
 provider "aws" {
-  region = "us-east-1"
+  region     = "us-east-1"
   access_key = var.access_key
   secret_key = var.secret_key
 }
 
-# create security group for the ec2 instance
-resource "aws_security_group" "ec2_security_group" {
-name        = "monitoring-sg-unique"
-  description = "allow access on ports 22"
-
-  # allow access on port 22
-  ingress {
-    description = "ssh access"
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+# استخدم الـ Security Group الموجود
+data "aws_security_group" "ec2_security_group" {
+  filter {
+    name   = "group-name"
+    values = ["ec2 security group"]   # الاسم الموجود اللي عامل مشاكل
   }
 
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = -1
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  tags = {
-    Name = "Monitoring server security group"
+  filter {
+    name   = "vpc-id"
+    values = ["vpc-05d2466ca39ef6ff5"] # الـ VPC اللي فيه الـ SG
   }
 }
 
 resource "aws_instance" "Monitoring_server" {
-ami = "ami-0030e4319cbf4dbf2"  
-instance_type = "c7i-flex.large"
-security_groups = [aws_security_group.ec2_security_group.name]
-key_name = var.key-name
-tags = {
-  Name: var.instance_name
-}
+  ami           = "ami-0030e4319cbf4dbf2"
+  instance_type = "c7i-flex.large"
+  key_name      = "starbucks1"
+
+  # اربط الـ instance بالـ SG الموجود
+  vpc_security_group_ids = [data.aws_security_group.ec2_security_group.id]
+
+  tags = {
+    Name = var.instance_name
+  }
 }
