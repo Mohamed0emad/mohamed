@@ -10,6 +10,4 @@ variable "secret_key" {
   default = "insert"         # aws secret key
 }
 
-variable "key_name" {
-  default = "starbucks1"              # Names of key in aws
-}
+
