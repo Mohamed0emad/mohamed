@@ -70,10 +70,10 @@ pipeline {
 
     post {
         success {
-            echo ' terraform execution completed successfully!'
+            echo ' terraform pipline completed successfully!'
         }
         failure {
-            echo ' terraform execution failed! Check the logs.'
+            echo ' terraform pipline failed! Check the logs.'
         }
     }
 }
