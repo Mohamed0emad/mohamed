@@ -44,7 +44,7 @@ resource "aws_instance" "Monitoring_server" {
 ami = "ami-0030e4319cbf4dbf2"  
 instance_type = "c7i-flex.large"
 security_groups = [aws_security_group.ec2_security_group.name]
-key_name = "nti"
+key_name = var.key-name
 tags = {
   Name: var.instance_name
 }
