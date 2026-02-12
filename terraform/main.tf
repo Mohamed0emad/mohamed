@@ -41,7 +41,7 @@ name          = "ec2-security-group-monitoring"
 }
 
 resource "aws_instance" "Monitoring_server" {
-ami = "ami-00bb6a80f01f03502"  
+ami = "ami-00b13f11600160c10"  
 instance_type = "c7i-flex.large"
 security_groups = [aws_security_group.ec2_security_group.name]
 key_name = var.key_name
