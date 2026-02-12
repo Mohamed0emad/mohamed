@@ -12,7 +12,3 @@ variable "secret_key" {
 variable "key-name" {
   default = "starbucks1"         # aws key pair
 }
-
-variable "sg-name"{
-  default= "sg-monitoring"
-}
