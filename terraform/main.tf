@@ -16,7 +16,7 @@ provider "aws" {
 
 # create security group for the ec2 instance
 resource "aws_security_group" "security_group" {
-  name        = "lunch-wizerd-0"
+  name        = "ec2-sg-group"
   description = "allow access on ports 22"
 
   # allow access on port 22
