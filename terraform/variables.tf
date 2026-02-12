@@ -10,7 +10,7 @@ variable "secret_key" {
   default = "insert"         # aws secret key
 }
 variable "key-name" {
-  default = "starbucks1"         # aws key pair
+  default = "nti"         # aws key pair
 }
 
 
