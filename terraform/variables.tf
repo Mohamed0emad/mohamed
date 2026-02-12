@@ -11,5 +11,5 @@ variable "secret_key" {
 }
 
 variable "key_name" {
-  default = "nti"                # Names of key in aws
+  default = "starbucks1"              # Names of key in aws
 }
