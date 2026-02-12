@@ -3,7 +3,7 @@ variable "instance_name" {
 }
 
 variable "key_name" {
-  default = "nti.pem"                  # Names of key in aws
+  default = "nti"                  # Names of key in aws
 }
 
 
