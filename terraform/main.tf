@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "aws" {
-  region     = "us-east-"
+  region     = "us-east-1"
   access_key = var.access_key
   secret_key = var.secret_key
 }
@@ -23,9 +23,9 @@ resource "aws_vpc" "main" {
 
 # Subnet
 resource "aws_subnet" "main" {
-  vpc_id            = aws_vpc.main.id
-  cidr_block        = "10.0.1.0/24"
-  availability_zone = "us-east-2a"
+  vpc_id                  = aws_vpc.main.id
+  cidr_block              = "10.0.1.0/24"
+  availability_zone       = "us-east-2a"
   map_public_ip_on_launch = true
   tags = {
     Name = "main-subnet"
@@ -95,4 +95,10 @@ resource "aws_instance" "Monitoring_server" {
   tags = {
     Name = var.instance_name
   }
+}
+
+# Output Public IP
+output "public_ip" {
+  description = "Public IP of the EC2 instance"
+  value       = aws_instance.Monitoring_server.public_ip
 }
