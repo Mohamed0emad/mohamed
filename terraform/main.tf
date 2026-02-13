@@ -18,7 +18,7 @@ provider "aws" {
 resource "aws_security_group" "ec2_security_group" {
   name        = "ec2-securit-group"
   description = "allow access on ports 22"
-
+  vpc_id      = "vpc-09ab5bb2fc78e1da1"
   # allow access on port 22
   ingress {
     description = "ssh access"
