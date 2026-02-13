@@ -1,19 +1,19 @@
-variable "instance_name" {
-    default = "Monitoring_server"  # Names of the instance
-}
-
-variable "key_name" {
-  default = "starbucks1"                  # Names of key in aws
-}
-
-
 variable "access_key" {
-  default = "insert"                # aws access key
+  description = "AWS access key"
+  type        = string
 }
 
 variable "secret_key" {
-  default = "insert"         # aws secret key
+  description = "AWS secret key"
+  type        = string
 }
-variable "vpc_id" {
-  default = "vpc-092d20bb08914ef02"         # deafult vpc id 
+
+variable "key_name" {
+  description = "Name of the AWS key pair"
+  type        = string
+}
+
+variable "instance_name" {
+  description = "Name tag for the EC2 instance"
+  type        = string
 }
