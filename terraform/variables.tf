@@ -14,3 +14,6 @@ variable "access_key" {
 variable "secret_key" {
   default = "insert"         # aws secret key
 }
+variable "vpc_id" {
+  default = "vpc-092d20bb08914ef02"         # deafult vpc id 
+}
