@@ -14,6 +14,16 @@ provider "aws" {
   secret_key = var.secret_key
 }
 
+
+terraform {
+  backend "s3" {
+    bucket         = "my-starbucks-state-bucket-" # اسم الباكت اللي هتكريته
+    key            = "monitoring/terraform.tfstate"
+    region         = "us-east-1"
+  }
+}
+
+
 # 1. تعريف الـ VPC
 resource "aws_vpc" "monitoring_vpc" {
   cidr_block           = "10.0.0.0/16"
