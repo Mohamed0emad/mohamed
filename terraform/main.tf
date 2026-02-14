@@ -74,7 +74,7 @@ resource "aws_instance" "Monitoring_server" {
   # ملاحظة: إذا كنت تستخدم منطقة أخرى، ستحتاج لتغيير الـ ID
   ami           = "ami-0c7217cdde317cfec" 
   instance_type = "c7i-flex.large"
-  key_name      = var.key-name
+  key_name      = var.key_name
 
   subnet_id              = aws_subnet.public_subnet.id
   vpc_security_group_ids = [aws_security_group.ec2_security_group.id]
