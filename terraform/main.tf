@@ -17,7 +17,7 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket         = "my-starbucks-state-bucket-" # اسم الباكت اللي هتكريته
+    bucket         = "my-starbucks-state-bucket" # اسم الباكت اللي هتكريته
     key            = "monitoring/terraform.tfstate"
     region         = "us-east-1"
   }
