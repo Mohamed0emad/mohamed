@@ -9,15 +9,25 @@ terraform {
 
 # Configure the AWS Provider
 provider "aws" {
-  region = "ca-central-1"
+  region = "us-east-1"
   access_key = var.access_key
   secret_key = var.secret_key
+}
+
+# جلب بيانات الـ VPC الافتراضية
+data "aws_vpc" "my-vpc-nti" {
+  vpc_id      = "vpc-085567c80ce4afc2a"
+}
+resource "aws_security_group" "ec2_security_group" {
+  name        = "ec2 security group"
+  description = "allow access on ports 22"
 }
 
 # create security group for the ec2 instance
 resource "aws_security_group" "ec2_security_group" {
   name        = "ec2-security-group"
   description = "allow access on ports 22"
+  vpc_id      = data.aws_vpc.default.id
 
   # allow access on port 22
   ingress {
