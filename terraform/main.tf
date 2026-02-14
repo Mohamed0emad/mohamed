@@ -96,6 +96,3 @@ resource "aws_instance" "Monitoring_server" {
   }
 }
 
-output "public_ip" {
-  value = aws_instance.Monitoring_server.public_ip
-}
