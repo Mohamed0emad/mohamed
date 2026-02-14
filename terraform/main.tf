@@ -90,7 +90,7 @@ resource "aws_instance" "Monitoring_server" {
 
   subnet_id              = aws_subnet.public_subnet.id
   vpc_security_group_ids = [aws_security_group.ec2_security_group.id]
-
+  depends_on = [aws_security_group.ec2_security_group]
   tags = {
     Name = "Monitoring_Ubuntu_Server"
   }
