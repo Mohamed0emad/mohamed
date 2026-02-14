@@ -27,7 +27,7 @@ resource "aws_security_group" "ec2_security_group" {
 resource "aws_security_group" "ec2_security_group" {
   name        = "ec2-security-group"
   description = "allow access on ports 22"
-  vpc_id      = data.aws_vpc.default.id
+  vpc_id      = data.aws_vpc.my-vpc-nti.id
 
   # allow access on port 22
   ingress {
