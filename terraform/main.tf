@@ -23,7 +23,7 @@ data "aws_vpc" "my-vpc-nti" {
 resource "aws_security_group" "ec2_security_group" {
   name        = "monitoring-server-sg"
   description = "allow access on port 22"
-  vpc_id      = data.aws_vpc.selected.id # الربط الصحيح بالـ VPC بتاعتك
+  vpc_id      = data.aws_vpc.my-vpc-nti.id # الربط الصحيح بالـ VPC بتاعتك
 
   ingress {
     description      = "ssh access"
