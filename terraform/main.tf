@@ -62,7 +62,9 @@ resource "aws_route_table_association" "public_assoc" {
 resource "aws_security_group" "ec2_security_group" {
   name        = "monitoring-sg"
   vpc_id      = aws_vpc.monitoring_vpc.id
-
+depends_on = [
+    aws_vpc.monitoring_vpc
+  ]
   ingress {
     from_port   = 22
     to_port     = 22
