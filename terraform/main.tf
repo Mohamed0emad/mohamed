@@ -15,7 +15,7 @@ provider "aws" {
 }
 
 # Vpc ID
-data "aws_vpc" "selected" {
+data "aws_vpc" "my-vpc-nti" {
   id = "vpc-085567c80ce4afc2a"
 }
 
