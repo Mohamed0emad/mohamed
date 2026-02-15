@@ -24,7 +24,7 @@
 ### **Phase 2: Deployment to EKS Cluster with Monitoring**
 - Deploy the application to an **Amazon EKS (Elastic Kubernetes Service)** cluster.
 - Set up **Prometheus** and **Grafana** for monitoring and visualization.
-- Implement **Trivy** for vulnerability scanning and **OWASP** for security best practices.
+- Implement **Trivy** for vulnerability scanning.
 
 ---
 
