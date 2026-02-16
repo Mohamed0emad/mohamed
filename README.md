@@ -1,5 +1,7 @@
-## Hi there! this my new project
+![WhatsApp Image 2026-02-15 at 2 33 35 PM](https://github.com/user-attachments/assets/17ddfd7b-9f54-430a-b237-f74ed64ccaf6)## Hi there! this my new project
 **Welcome to the Starbuck App Deployment project! This project demonstrates how to deploy a StarBucks Clone Next.js application on Kubernetes cluster using modern DevOps tools, practices and following a DevSecOps approach.**
+
+Architecture:
 
 ## 🛠️ **Tools & Services Used**
 
